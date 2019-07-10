@@ -1,0 +1,1110 @@
+@charset "utf-8";
+
+/*全局样式*/
+
+.btn {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size: 12px;
+}
+
+.form-control {
+	height: 26px;
+}
+
+input {
+	height: 30px;
+}
+
+.nav>li>a {
+	position: relative;
+	display: block;
+	padding: 4px 15px;
+}
+
+
+/*=============header=====================*/
+
+header {
+	width: 100%;
+	height: 40px;
+	background-color: #0a1e32;
+	overflow: hidden;
+}
+
+header .header-container {
+	width: 95%;
+	margin: 0 auto;
+}
+
+header .header-msg {
+	font-size: 13px;
+	height: 40px;
+	float: left;
+	color: white;
+}
+
+header .header-msg span {
+	line-height: 40px;
+	color: #f66;
+}
+
+header .header-nav {
+	height: 40px;
+	float: right;
+}
+
+.header-nav li {
+	float: right;
+	line-height: 40px;
+	border-left: 1px solid #032f4e;
+	padding: 0 10px;
+}
+
+.header-nav li:nth-of-type(1) {
+	border-right: 1px solid #032f4e;
+}
+
+.header-nav li i {
+	display: inline-block;
+	width: 22px;
+	height: 40px;
+	float: left;
+	margin-right: 10px;
+}
+
+.header-nav li:nth-of-type(1) i {
+	background: url(../images/yundongjia/icon_all.png) -54px -80px no-repeat;
+}
+
+.header-nav li:nth-of-type(2) i {
+	background: url(../images/yundongjia/icon_all.png) -54px -50px no-repeat;
+}
+
+.header-nav li:nth-of-type(3) i {
+	background: url(../images/yundongjia/icon_all.png) -54px -19px no-repeat;
+}
+
+.header-nav li:nth-of-type(4) i {
+	background: url(../images/yundongjia/icon_all.png) -54px 12px no-repeat;
+}
+
+.header-nav li a {
+	color: #9a9da0;
+	font-size: 14px;
+	display: inline-block;
+	height: 40px;
+	float: left;
+	line-height: 41px;
+}
+
+.header-nav li span {
+	color: #9a9da0;
+	font-size: 14px;
+	display: inline-block;
+	height: 40px;
+	float: left;
+}
+
+.system {
+	width: 100%;
+	background-color: #0b233b;
+	overflow: hidden;
+}
+
+.system .system-title {
+	width: 95%;
+	height: 80px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.system .system-title img {
+	margin-top: 20px;
+}
+
+
+/*=============左侧菜单=====================*/
+
+.index-left {
+	position: absolute;
+	left: 0;
+	top: 120px;
+	bottom: 0;
+	background-color: #0b233b;
+}
+
+.index-right {
+	position: absolute;
+	right: 0;
+	top: 120px;
+	bottom: 0;
+	background-color: #fff;
+	padding-right: 80px;
+	padding-left: 20px;
+	width: -webkit-calc(100% - 230px);
+	width: -moz-calc(100% - 230px);
+	width: calc(100% - 230px);
+	overflow: auto;
+}
+
+.index-left-menu {
+	width: 230px;
+}
+
+.index-left-menu-item span {
+	display: inline-block;
+	float: left;
+	width: 25px;
+	height: 60px;
+	margin-left: 40px;
+}
+
+.index-left-menu li:nth-of-type(1) .index-left-menu-item span {
+	background: url(../images/yundongjia/icon_all.png) 0px 20px no-repeat;
+}
+
+.index-left-menu li:nth-of-type(2) .index-left-menu-item span {
+	background: url(../images/yundongjia/icon_all.png) 0px -25px no-repeat;
+}
+
+.index-left-menu li:nth-of-type(3) .index-left-menu-item span {
+	background: url(../images/yundongjia/icon_all.png) -3px -153px no-repeat ;
+}
+
+.index-left-menu li:nth-of-type(4) .index-left-menu-item span {
+	background: url(../images/yundongjia/icon_all.png) -3px -265px no-repeat;
+}
+
+.index-left-menu li:nth-of-type(5) .index-left-menu-item span {
+	background: url(../images/yundongjia/icon_all.png) -3px -88px no-repeat;
+}
+
+.index-left-menu li:nth-of-type(6) .index-left-menu-item span {
+	background: url(../images/yundongjia/icon_all.png) -3px -326px no-repeat;
+}
+
+.index-left-menu li:nth-of-type(7) .index-left-menu-item span {
+	background: url(../images/yundongjia/icon_all.png) -3px -384px no-repeat;
+}
+
+.index-left-menu li .index-left-menu-item i {
+	background: url(../images/yundongjia/icon_all.png) -55px -114px no-repeat;
+}
+
+.index-left-menu .index-left-menu-item {
+	line-height: 60px;
+	height: 60px;
+	border-bottom: 1px solid #033254;
+}
+
+.index-left-menu .index-left-menu-item:first {
+	border-top: 1px solid #033254;
+}
+
+.index-left-menu-item a {
+	display: inline-block;
+	float: left;
+	color: #bcbec1;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0 8px 0 15px;
+	cursor: pointer;
+}
+
+.index-left-menu-item i {
+	display: inline-block;
+	float: right;
+	width: 20px;
+	height: 40px;
+	margin-top: 10px;
+	margin-right: 15px
+}
+
+.index-left-menu-list li {
+	line-height: 60px;
+	padding-left: 80px;
+	color: #b3b3b3;
+	font-size: 14px;
+	background-color: #000000;
+}
+
+.index-left-menu-list li:hover,
+.index-left-menu-list li.active {
+	background-color: #033254;
+	color: #4a87c4;
+	cursor: pointer;
+}
+
+
+/*=============我的健身房=====================*/
+
+.main .main-content {
+	float: left;
+	margin-left: 25px;
+	width: 81.25%;
+}
+
+.main-content-header {
+	overflow: hidden;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.main-content-header .route {
+	height: 58px;
+	line-height: 58px;
+	font-size: 14px;
+	float: left;
+	color: #4b4b4b;
+}
+
+.main-content-tool {
+	margin: 10px 0 10px 0;
+	overflow: hidden;
+}
+
+.main-content-tool .my-msg {
+	float: left;
+	line-height: 24px;
+	font-size: 20px;
+}
+
+.main-content-tool .add-btn a,
+.main-content-tool .venue-btn a {
+	background-color: #0b3055;
+	cursor: pointer;
+	border: 0;
+	color: white;
+}
+
+.main-content-tool .venue-btn a:nth-of-type(1) {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.my-gym-content img {
+	width: 180px;
+	height: 100px;
+}
+
+.my-gym-content h2 {
+	line-height: 100px;
+	font-size: 24px;
+}
+
+
+/*==============场馆列表===================*/
+
+.main-content-item {
+	padding-top: 25px;
+	overflow: hidden;
+	margin-left: -22px;
+	clear: both;
+}
+
+.main-content-item .gym-item {
+	width: 306px;
+	float: left;
+	overflow: hidden;
+}
+
+.main-content-item .gym-item h4 {
+	padding-left: 22px;
+}
+
+.main-content-item .gym-item dl {
+	width: 266px;
+	margin: 0 auto;
+	border: 1px solid #eaeaea;
+	overflow: hidden;
+}
+
+.main-content-item .gym-item dt {
+	padding: 6px;
+}
+
+.main-content-item .gym-item dt img {
+	width: 250px;
+	height: 150px;
+}
+
+.main-content-item .gym-item dd {
+	background-color: #f2f2f2;
+	overflow: hidden;
+	padding-left: 20px;
+	padding-right: 10px;
+	padding-bottom: 25px;
+}
+
+.main-content-item .gym-item dd div {
+	padding-top: 10px;
+}
+
+.main-content-item .gym-item dd p {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.main-content-item .gym-item dd a {
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.main-content-item .gym-item dd a span {
+	margin-right: 5px;
+}
+
+.main-content-item .gym-item dd a:nth-of-type(2) {
+	float: right;
+	color: #000000;
+}
+
+
+/*弹窗*/
+
+.myGym .modal-content {
+	width: 640px;
+}
+
+.myGym .modal-header {
+	background-color: #0b2947;
+}
+
+.myGym .modal-header .modal-title {
+	text-align: center;
+	font-size: 16px;
+	color: white;
+}
+
+.myGym .modal-header .close {
+	font-size: 24px;
+	color: white;
+	opacity: 1;
+}
+
+.myGym .modal-body .add0 {
+	padding: 0 50px;
+	margin-top: 70px;
+}
+
+.myGym .modal-body .add0 .btn-group {
+	margin-left: 32px;
+	margin-right: 32px;
+}
+
+.myGym .modal-body .add0 .btn-group .btn:nth-of-type(1) {
+	width: 300px;
+}
+
+.myGym .modal-body .add0 .btn-group .dropdown-menu {
+	width: 323px;
+}
+
+.myGym .modal-body .add0 .btn-group .dropdown-menu {
+	width: 323px;
+}
+
+.myGym .modal-body .add0 .next-btn {
+	margin: 60px auto 80px;
+	width: 323px;
+}
+
+.myGym .modal-body .add1 {
+	overflow: hidden;
+	padding-bottom: 100px;
+	display: none;
+}
+
+.myGym .modal-body .add1 .col-md-3 .add-img {
+	width: 120px;
+	height: 120px;
+	margin-top: 52px;
+	background-color: #f1f1f1;
+	border: 1px solid #e8e6e6;
+	margin-bottom: 10px;
+}
+
+.myGym .modal-body .add1 .col-md-2 h2 {
+	margin-top: 70px;
+}
+
+.myGym .modal-body .add1 .col-md-6 {
+	padding: 0;
+}
+
+.myGym .modal-body .add1 .col-md-7 input {
+	margin: 70px 0 34px 0;
+}
+
+.myGym .modal-body .add1 .col-md-6 .btn {
+	width: 120px;
+	background-color: #eeeeee;
+	border: 0;
+	color: #888888;
+}
+
+.myGym .modal-body .add1 .col-md-6:nth-of-type(2) .btn {
+	float: right;
+	background-color: #0b3055;
+	color: white;
+}
+
+.myGym .modal-body .add2 {
+	overflow: hidden;
+	padding-bottom: 40px;
+	display: none;
+}
+
+.myGym .modal-body .add2 img {
+	width: 140px;
+	height: 140px;
+}
+
+.myGym .modal-body .add2 .col-md-6 {
+	padding: 0;
+}
+
+.myGym .modal-body .add2 .col-md-6 .btn {
+	width: 120px;
+	background-color: #eeeeee;
+	border: 0;
+	color: #888888;
+}
+
+.myGym .modal-body .add2 .col-md-6:nth-last-child(1) .btn {
+	float: right;
+	background-color: #0b3055;
+	color: white;
+}
+
+
+/*=============课程预约=====================*/
+
+.courseBooking .main-content-inquire {
+	width: 100%;
+	padding-bottom: 30px;
+}
+
+.courseBooking .main-content-inquire .col-md-6,
+.courseBooking .main-content-inquire .col-md-10 {
+	padding-left: 0;
+}
+
+.courseBooking .main-content-inquire .col-md-6 .btn-group .btn {
+	width: 90%;
+}
+
+.courseBooking .main-content-inquire .col-md-6 .btn-group .dropdown-toggle {
+	width: 10%;
+}
+
+.courseBooking .main-content-inquire .col-md-6 .btn-group .dropdown-menu {
+	width: -webkit-calc(100% - 15px);
+	width: -moz-calc(100% - 15px);
+	width: calc(100% - 15px);
+}
+
+.courseBooking .detail-btn {
+	color: #0099c5;
+	margin-right: 5px;
+}
+
+.padding30r {
+	padding-right: 30px;
+}
+
+.bcColor {
+	background-color: #0b3055!important;
+	color: white!important;
+	border: 0;
+}
+
+
+/*=============课程详情=====================*/
+
+.courseDetail .jumbotron {
+	height: 100px;
+	border-radius: 5px;
+	background-color: #dadada;
+	color: #6f6f6f;
+	margin-bottom: 0;
+}
+
+.courseDetail .jumbotron.active {
+	background-color: #0b2e52;
+	color: white;
+}
+
+.courseDetail .jumbotron {
+	padding: 10px 20px;
+}
+
+.courseDetail .jumbotron h5 {
+	font-size: 14px;
+	line-height: 14px;
+}
+
+.courseDetail .jumbotron p {
+	font-size: 30px;
+}
+
+.courseDetail .main-content-tool .my-msg {
+	font-size: 24px;
+}
+
+.courseDetail .main-content-item {
+	padding-top: 0;
+}
+
+
+/*表格*/
+
+thead {
+	background-color: #0b2f53;
+	font-size: 14px;
+}
+
+tbody {
+	font-size: 12px;
+}
+
+tfoot {
+	background-color: #0b2f53;
+}
+
+.table>thead>tr>th {
+	line-height: 16px;
+}
+
+.table>tbody>tr:nth-child(odd) {
+	background-color: #fff;
+}
+
+.table>tbody>tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+.table>tbody>tr>td {
+	line-height: 16px;
+}
+
+.table>tfoot>tr>td {
+	line-height: 16px;
+}
+
+
+/*datetimepicker*/
+
+.datetimepicker thead tr:first-child th:hover,
+.datetimepicker tfoot th:hover {
+	background-color: #0b2f53!important;
+}
+
+
+/*=============会员=====================*/
+
+.member .main-content-inquire .col-md-5 .btn-group .btn {
+	width: 90%;
+}
+
+.member .main-content-inquire .col-md-5 .btn-group .dropdown-toggle {
+	width: 10%;
+}
+
+.member .main-content-inquire .col-md-5 .btn-group .dropdown-menu {
+	width: -webkit-calc(100% - 15px);
+	width: -moz-calc(100% - 15px);
+	width: calc(100% - 15px);
+}
+
+.member .main-content-inquire .reg-time {
+	margin-left: -86px;
+}
+
+.padding0L {
+	padding-left: 0;
+}
+
+.padding0R {
+	padding-right: 0;
+}
+
+.bording0 {
+	border: 0;
+}
+
+.padding0 {
+	padding: 0;
+}
+
+.padding0T {
+	padding-top: 0;
+}
+
+
+/*会员详情*/
+
+.memberDetail .main-content-courseBase {
+	margin-top: -15px;
+}
+
+.memberDetail .main-content-courseBase img {
+	padding-top: 15px;
+	width: 100%;
+	height: 230px;
+}
+
+.memberDetail .jumbotron {
+	height: 100px;
+	border-radius: 5px;
+	background-color: #dadada;
+	color: #6f6f6f;
+	margin-bottom: 0;
+	margin-top: 15px;
+}
+
+.memberDetail .jumbotron.active {
+	background-color: #0b2e52;
+	color: white;
+}
+
+.memberDetail .jumbotron {
+	padding: 10px 20px;
+}
+
+.memberDetail .jumbotron h5 {
+	font-size: 14px;
+	line-height: 14px;
+}
+
+.memberDetail .jumbotron p {
+	font-size: 30px;
+}
+
+
+/*翻页*/
+
+.main-content-footer {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+.main-content-footer p {
+	margin: 26px 0;
+}
+
+.page .page-list {
+	float: left;
+}
+
+.page a {
+	float: left;
+	width: 94px;
+	height: 30px;
+	border: 1px solid #e0e0e0;
+	background-color: #fafafa;
+	line-height: 30px;
+	text-align: center;
+	color: #888888;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.page a.active {
+	background-color: #dddddd;
+}
+
+.page a:nth-of-type(1) {
+	margin-right: 24px;
+}
+
+.page a:nth-of-type(2) {
+	margin-left: 12px;
+}
+
+.page-list span {
+	float: left;
+	display: inline-block;
+	width: 34px;
+	height: 30px;
+	border: 1px solid #e0e0e0;
+	background-color: #fafafa;
+	line-height: 30px;
+	text-align: center;
+	color: #888888;
+	font-size: 14px;
+	cursor: pointer;
+	margin-right: 5px;
+	border-radius: 5px;
+}
+
+.page-list span.active {
+	background-color: #0b3055;
+	color: white;
+	border: 0;
+}
+
+
+/*=============会员卡=====================*/
+
+.memberCard .main-content-inquire .col-md-5 .btn-group .btn,
+.memberCard .main-content-inquire .col-md-6 .btn-group .btn,
+.memberCard .main-content-inquire .col-md-7 .btn-group .btn {
+	width: 88%;
+}
+
+.memberCard .main-content-inquire .col-md-5 .btn-group .dropdown-toggle,
+.memberCard .main-content-inquire .col-md-6 .btn-group .dropdown-toggle,
+.memberCard .main-content-inquire .col-md-7 .btn-group .dropdown-toggle {
+	width: 12%;
+}
+
+.memberCard .main-content-inquire .col-md-5 .btn-group .dropdown-menu,
+.memberCard .main-content-inquire .col-md-6 .btn-group .dropdown-menu,
+.memberCard .main-content-inquire .col-md-7 .btn-group .dropdown-menu {
+	width: -webkit-calc(100% - 15px);
+	width: -moz-calc(100% - 15px);
+	width: calc(100% - 15px);
+}
+
+
+/*=============会员卡详情=====================*/
+
+.mCdetail .main-content-mCdetail li {
+	font-size: 14px;
+	line-height: 30px;
+	color: #6c6c6c;
+}
+
+
+/*=============报表管理=====================*/
+
+.reManage .nav-tabs {
+	border-bottom: 2px solid #0b3055;
+}
+
+.reManage .nav-tabs>li {
+	border-left: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
+	border-right: 0;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color: #f2f2f2;
+	margin-bottom: 0;
+}
+
+.reManage .nav-tabs>li:nth-last-of-type(1) {
+	border-right: 1px solid #e5e5e5;
+}
+
+.reManage .nav-tabs>li>a {
+	border: 1px solid transparent;
+	border-radius: 0;
+	color: #555555;
+}
+
+.reManage .nav-tabs>li.active>a,
+.reManage .nav-tabs>li.active>a:focus,
+.reManage .nav-tabs>li.active>a:hover {
+	color: white;
+	cursor: default;
+	background-color: #0b3055;
+	border: 1px solid transparent;
+	border-bottom-color: transparent;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.fr {
+	float: right;
+}
+
+.fl {
+	float: left;
+	line-height: 34px;
+}
+
+.border0 {
+	border: 0;
+}
+
+.reManage .tab-content>.tab-pane {
+	padding-top: 10px;
+}
+
+.reManage .reg-date {
+	border: 0;
+}
+
+.reManage .re-sum {
+	margin-top: 15px;
+}
+
+.reManage .lebel-msg {
+	width: 66px;
+	line-height: 34px;
+	font-size: 14px;
+}
+
+.reManage .main-content-inquire .col-md-12 .btn-group .btn,
+.reManage .main-content-inquire .col-md-5 .btn-group .btn,
+.reManage .main-content-inquire .col-md-6 .btn-group .btn,
+.reManage .main-content-inquire .col-md-7 .btn-group .btn {
+	width: -webkit-calc(100% - 36px);
+	width: -moz-calc(100% - 36px);
+	width: calc(100% - 36px);
+}
+
+.reManage .main-content-inquire .col-md-12 .btn-group .dropdown-toggle,
+.reManage .main-content-inquire .col-md-5 .btn-group .dropdown-toggle,
+.reManage .main-content-inquire .col-md-6 .btn-group .dropdown-toggle,
+.reManage .main-content-inquire .col-md-7 .btn-group .dropdown-toggle {
+	width: 36px;
+}
+
+.reManage .main-content-inquire .col-md-12 .btn-group .dropdown-menu,
+.reManage .main-content-inquire .col-md-5 .btn-group .dropdown-menu,
+.reManage .main-content-inquire .col-md-6 .btn-group .dropdown-menu,
+.reManage .main-content-inquire .col-md-7 .btn-group .dropdown-menu {
+	width: -webkit-calc(100% - 15px);
+	width: -moz-calc(100% - 15px);
+	width: calc(100% - 15px);
+}
+
+
+/*=============================系统设置==========================================*/
+
+.systemManage .index-left-menu li:nth-of-type(1) .index-left-menu-item span {
+	background: url(../images/yundongjia/icon_all.png) -3px -88px no-repeat;
+}
+
+.systemManage .index-left-menu li:nth-of-type(2) .index-left-menu-item span {
+	background: url(../images/yundongjia/icon_all.png) -3px -152px no-repeat;
+}
+
+.systemManage .index-left-menu li:nth-of-type(3) .index-left-menu-item span {
+	background: url(../images/yundongjia/icon_all.png) -3px -205px no-repeat;
+}
+
+.systemManage .index-left-menu li:nth-of-type(4) .index-left-menu-item span {
+	background: url(../images/yundongjia/icon_all.png) -3px -265px no-repeat;
+}
+
+.systemManage .index-left-menu li:nth-of-type(5) .index-left-menu-item span {
+	background: url(../images/yundongjia/icon_all.png) -3px -326px no-repeat;
+}
+
+.systemManage .index-left-menu li:nth-of-type(6) .index-left-menu-item span {
+	background: url(../images/yundongjia/icon_all.png) -3px -385px no-repeat;
+}
+
+
+/*========场馆管理==========*/
+
+.venueManage .venue-btn {
+	display: none;
+}
+.venueManage .add-btn a {
+	background-image: url(../images/yundongjia/icon_all.png);
+	background-position: -108px -64px;
+	background-repeat: no-repeat;
+	padding: 4px 20px;
+}
+
+.venueManage .add-btn:nth-of-type(2) a {
+	background-position: -108px -101px;
+}
+
+.venueManage .venueMge-content img {
+	width: 210px;
+	height: 200px;
+}
+
+.venueManage .venueMge-content li {
+	line-height: 40px;
+	font-size: 14px;
+}
+
+.venueManage .venueMge-content li label,
+.venueManage .venueMge-content li span {
+	margin-right: 5px;
+}
+
+.venueManage .venueMge-content li span:nth-of-type(2) {
+	margin-left: 5px;
+}
+
+.venueManage .main-content-item {
+	padding-top: 0;
+}
+
+.venueManage .venue-edite,
+.venueManage .date-edite {
+	display: none;
+}
+
+.venueManage input[type='file'] {
+	outline: 0;
+	box-shadow: none;
+}
+
+.venueManage .date-edite ul li>label,
+.venueManage .date-edite ul li>span {
+	float: left;
+	font-size: 12px;
+	line-height: 30px;
+	color: #606060;
+}
+
+.venueManage .venueMge-content .col-md-7 .btn-group .btn {
+	width: 70%;
+}
+
+.venueManage .venueMge-content .col-md-7 .btn-group .dropdown-toggle {
+	width: 30%;
+}
+
+.venueManage .venueMge-content .col-md-7 .btn-group .dropdown-menu {
+	width: -webkit-calc(100% - 30px);
+	width: -moz-calc(100% - 30px);
+	width: calc(100% - 30px);
+	min-width: auto;
+	left: 15px;
+}
+
+.venueManage .modal-header {
+	height: 40px;
+	background-color: #0b2c4e;
+	color: white;
+	padding-top: 10px;
+}
+
+.venueManage .modal-header h4 {
+	text-align: center;
+}
+
+.venueManage .modal-header button {
+	color: white;
+	opacity: 1;
+}
+
+.venueManage .modal-body form {
+	padding-right: 88px;
+}
+
+.venueManage .modal-body form .form-group input[type='checkbox'] {
+	margin-top: -7px;
+}
+
+.venueManage .modal-body form .form-group .checkbox {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.venueManage .modal-body form .form-group .btn {
+	font-size: 12px;
+	background-color: #dddddd;
+	margin-right: 10px;
+}
+
+.venueManage .modal-body form .form-group .btn.active {
+	background-color: #0b3055;
+	color: white;
+}
+
+
+
+/*========权限管理==========*/
+/*    ../images/yundongjia/icon_all.png     */
+.authManage .add-btn a {
+    background-image: url(../images/yundongjia/icon_all.png);
+    background-position: -108px -101px;
+    background-repeat: no-repeat;
+    padding: 4px 20px;
+}
+
+.authManage .modal-body:nth-of-type(1) {
+    padding-right: 70px;
+}
+.authManage .modal-body:nth-of-type(2) {
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.authManage .modal-body .checkbox label {
+    line-height: 38px;
+}
+
+.authManage .modal-body .form-group ul>li {
+    font-size: 14px;
+    padding-left: 18px;
+    line-height: 40px;
+    color: #555555;
+}
+
+.authManage .modal-body .menu-list ul>li>.checkbox {
+    position: relative;
+}
+
+.authManage .modal-body .menu-list>ul>li,
+.authManage .modal-body .menu-list>ul>li>ul>li {
+    background: url(../images/yundongjia/icon_all.png) -480px -458px no-repeat;
+}
+
+.authManage .modal-body .menu-list>ul>li.active,
+.authManage .modal-body .menu-list>ul>li>ul>li.active {
+    background-position: -112px 25px;
+}
+
+.authManage .modal-body .menu-list ul>li>.checkbox input {
+    position: absolute;
+    right: 125px;
+    top: 8px;
+}
+
+.authManage .modal-body.auth-given ul {
+    height: 200px;
+    background-color: #f1f1f1;
+    overflow: auto;
+}
+
+.authManage .modal-body.auth-given ul>li {
+    font-size: 14px;
+    padding-left: 18px;
+    line-height: 40px;
+    color: #555555;
+}
+
+.authManage .modal-body.auth-given ul>li:hover,
+.authManage .modal-body.auth-given ul>li.active {
+    background-color: #00aaef;
+    color: white;
+    cursor: pointer;
+}
+
+.authManage .modal-body.auth-given .del {
+    padding: 20px 0;
+}
+
+.authspan {
+    cursor: pointer;
+
+
+}
+
+.authdiv{
+    margin:7px 0 0 15px ;
+    float: left;
+
+}
+
+.clean{
+    clear: both;
+}
+
+.authcheckbox{
+    float: right;
+}

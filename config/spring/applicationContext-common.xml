@@ -1,0 +1,195 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.2.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
+
+    <context:component-scan base-package="com.testSign.service"></context:component-scan>
+
+    <!-- 加载db.properties文件中的内容，db.properties文件中key命名要有一定的特殊规则 -->
+	<context:property-placeholder  location="classpath:*.properties" />
+
+	<!-- c3p0连接池配置 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<!-- 用户名 -->
+		<property name="user" value="${jdbc.username}" />
+		<!-- 用户密码 -->
+		<property name="password" value="${jdbc.password}" />
+		<property name="driverClass" value="${jdbc.driver}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+
+		<!--连接池中保留的最大连接数。默认值: 15 -->
+		<property name="maxPoolSize" value="20" />
+		<!-- 连接池中保留的最小连接数，默认为：3 -->
+		<property name="minPoolSize" value="2" />
+		<!-- 初始化连接池中的连接数，取值应在minPoolSize与maxPoolSize之间，默认为3 -->
+		<property name="initialPoolSize" value="2" />
+
+		<!--最大空闲时间，60秒内未使用则连接被丢弃。若为0则永不丢弃。默认值: 0 -->
+		<property name="maxIdleTime" value="60" />
+
+		<!-- 当连接池连接耗尽时，客户端调用getConnection()后等待获取新连接的时间，超时后将抛出SQLException，如设为0则无限期等待。单位毫秒。默认: 
+			0 -->
+		<property name="checkoutTimeout" value="0" />
+
+		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。默认值: 3 -->
+		<property name="acquireIncrement" value="2" />
+
+		<!--定义在从数据库获取新连接失败后重复尝试的次数。默认值: 30 ；小于等于0表示无限次 -->
+		<property name="acquireRetryAttempts" value="0" />
+
+		<!--重新尝试的时间间隔，默认为：1000毫秒 -->
+		<property name="acquireRetryDelay" value="1000" />
+
+		<!--关闭连接时，是否提交未提交的事务，默认为false，即关闭连接，回滚未提交的事务 -->
+		<property name="autoCommitOnClose" value="false" />
+
+		<!--c3p0将建一张名为Test的空表，并使用其自带的查询语句进行测试。如果定义了这个参数那么属性preferredTestQuery将被忽略。你不能在这张Test表上进行任何操作，它将只供c3p0测试使用。默认值: 
+			null -->
+		<property name="automaticTestTable" value="test" />
+
+		<!--如果为false，则获取连接失败将会引起所有等待连接池来获取连接的线程抛出异常，但是数据源仍有效保留，并在下次调用getConnection()的时候继续尝试获取连接。如果设为true，那么在尝试获取连接失败后该数据源将申明已断开并永久关闭。默认: 
+			false -->
+		<property name="breakAfterAcquireFailure" value="false" />
+
+		<!--每60秒检查所有连接池中的空闲连接。默认值: 0，不检查 -->
+		<property name="idleConnectionTestPeriod" value="60" />
+		<!--c3p0全局的PreparedStatements缓存的大小。如果maxStatements与maxStatementsPerConnection均为0，则缓存不生效，只要有一个不为0，则语句的缓存就能生效。如果默认值: 
+			0 -->
+		<property name="maxStatements" value="100" />
+		<!--maxStatementsPerConnection定义了连接池内单个连接所拥有的最大缓存statements数。默认值: 0 -->
+		<property name="maxStatementsPerConnection" value="0" />
+	</bean>
+
+
+	<!-- sqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 数据库连接池 -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- 加载mybatis的全局配置文件 -->
+		<property name="configLocation" value="classpath:mybatis/sqlMapConfig.xml" />
+		<!-- 加载mybatis分页插件 -->
+		<property name="plugins">
+			<array>
+				<bean class="com.github.pagehelper.PageHelper">
+					<property name="properties">
+						<value>dialect=mysql</value>
+					</property>
+				</bean>
+			</array>
+			 
+		</property>
+		
+	</bean>
+
+	<!-- mapper(dao)扫描器 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 扫描包路径，如果需要扫描多个包，中间使用半角逗号隔开 -->
+		<property name="basePackage" value="com.testSign.mapper"></property>
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+
+
+
+	<!-- 事务管理器 对mybatis操作数据库事务控制，spring使用jdbc的事务控制类 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<!-- 数据源 dataSource在applicationContext-dao.xml中配置了 -->
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- 开启声明式事务的注解模式 -->
+     <tx:annotation-driven transaction-manager="transactionManager"/>
+     
+	<!-- 通知 -->
+	<!-- <tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			传播行为
+			<tx:method name="save*" propagation="REQUIRED" rollback-for="Excepiton" />
+			<tx:method name="delete*" propagation="REQUIRED"  rollback-for="Excepiton" />
+			<tx:method name="insert*" propagation="REQUIRED"  rollback-for="Excepiton" />
+			<tx:method name="update*" propagation="REQUIRED"  rollback-for="Excepiton" />
+			<tx:method name="find*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="get*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="select*" propagation="SUPPORTS" read-only="true" />
+		</tx:attributes>
+	</tx:advice> -->
+	<!-- aop
+	<aop:config>
+        <aop:pointcut id="productServiceMethods" expression="execution(* com.testSign.service.*.*(..))" />
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="productServiceMethods" />
+	</aop:config>
+ 	-->
+
+	  <!-- redis连接池的配置 -->
+	    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+	      <property name="maxActive" value="${redis.pool.maxActive}"/>
+	      <property name="maxIdle" value="${redis.pool.maxIdle}"/>
+	      <property name="minIdle" value="${redis.pool.minIdle}"/>
+	      <property name="maxWait" value="${redis.pool.maxWait}"/>
+	      <property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/>
+	      <property name="testOnReturn" value="${redis.pool.testOnReturn}"/>
+	    </bean>
+	    
+	    <!-- redis的连接池pool，不是必选项：timeout/password  -->
+	     <bean id = "jedisPool" class="redis.clients.jedis.JedisPool">
+	      <constructor-arg index="0" ref="jedisPoolConfig"/>
+	      <constructor-arg index="1" value="${redis.host}"/>
+	      <constructor-arg index="2" value="${redis.port}" type="int"/>
+	      <constructor-arg index="3" value="${redis.timeout}" type="int"/>
+	      <!--<constructor-arg index="4" value="${redis.password}"/>-->
+	    </bean>
+	<!-- 定时任务 -->
+	
+	<!-- 方式二：使用MethodInvokingJobDetailFactoryBean，任务类可以不实现Job接口，通过targetMethod指定调用方法-->    
+    <!-- 定义目标bean和bean中的方法 -->  
+	<!--  <bean id="SpringQtzJob" class="com.testSign.oa.admin.service.impl.TimedTaskServiceImpl"/>  
+	 <bean id="MyTimeSpringJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+	    <property name="targetObject">  
+	        <ref bean="SpringQtzJob"/>  
+	    </property>  
+	    <property name="targetMethod">  -->  <!-- 要执行的方法名称 -->  
+	       <!--  <value>insertSignDeduction</value>  
+	    </property>  
+	</bean>-->  
+	
+	<!-- 每天十二點執行的類與方法-->
+	   <!--  <bean id="twelveJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+	    <property name="targetObject">  
+	        <ref bean="SpringQtzJob"/>  
+	    </property>  
+	    <property name="targetMethod">  -->  <!-- 要执行的方法名称 -->  
+	       <!--  <value>updateEndDate</value>  
+	    </property>  
+	</bean>-->  
+	<!-- 相关的时间配置 -->  
+	<!-- <bean class="org.springframework.scheduling.quartz.SimpleTriggerBean" id="MyTimesimpleTriggerBean">  
+	    <property name="jobDetail" ref="MyTimeSpringJob"/> -->    <!-- 给MyTimeSpringJob配置时间信息，name的jobDetail是spring内部需要注入的名字 -->  
+	     <!--<property name="repeatInterval" value="480000"/>  -->      <!--相隔8分钟执行一次 -->  
+	    <!--  <property name="startDelay" value="5000"/>     -->       <!--tomcat或者jboss启动5000毫秒后开始执行任务 -->  
+	<!--</bean>-->  
+	<!-- 每天十二點執行--> 
+	<!--<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+	   <property name="jobDetail"  ref="twelveJob"/>
+	   <property name="cronExpression">
+	    	<value>0 0 0 * * ?</value>--> <!--每天凌晨12点执行一次-->
+	   <!--</property>
+	</bean> -->
+	<!-- ****************启动定时任务***************** -->  
+	<!-- <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+	    <property name="triggers">  
+	        <list>  
+	        <ref bean="MyTimesimpleTriggerBean"/>
+	        <ref bean="cronTrigger"/>    
+	        </list>  
+	    </property>  
+	</bean>	-->
+</beans>

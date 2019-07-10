@@ -1,0 +1,123 @@
+@charset "utf-8";
+body {
+	overflow: hidden;
+	position: relative;
+}
+
+.login-bg-img img {
+	max-width: 100%;
+	height: auto;
+}
+
+.login-bg {
+	background: url(../../static/images/systemImages/login/blue_bg.png);
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+
+
+/*login-登录*/
+
+.login-bg .login-container {
+	position: absolute;
+	width: 500px;
+	overflow: hidden;
+	left: 50%;
+	top: 50%;
+	margin-left: -250px;
+	margin-top: -225px;
+}
+
+.login-bg .login-img img {
+	display: block;
+	width: 100%;
+	height: 7.875%;
+}
+
+.login-bg .login-content {
+	width: 100%;
+	height: 19.8125em;
+	background-color: white;
+	margin-top: 2.25em;
+	border-radius: 5px;
+	overflow: hidden;
+	padding-bottom: 40px;
+}
+
+.login-bg .login-content li {
+	width: 76.4%;
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+}
+
+.login-bg .login-content li:nth-of-type(1) {
+	margin-top: 5.5em;
+	margin-bottom: 1.25em;
+}
+
+.login-bg .login-content li label {
+	position: absolute;
+	display: block;
+	width: 6.5%;
+	height: 2.875em;
+	left: 0.625em;
+	top: 0;
+}
+
+.login-bg .login-content li:nth-of-type(1) label {
+	background: url(../../static/images/systemImages/login/login.png) no-repeat center;
+}
+
+.login-bg .login-content li:nth-of-type(2) label {
+	background: url(../../static/images/systemImages/login/password.png) no-repeat center;
+}
+
+.login-bg .login-content li:nth-of-type(4) {
+	margin-top: 10px;
+}
+
+.login-bg .login-content li .user-reg {
+	font-size: 0.875em;
+	float: left;
+	color: #737373;
+	line-height: 1.875em;
+	cursor: pointer;
+}
+
+.login-bg .login-content li .user-pwd {
+	font-size: 0.875em;
+	float: right;
+	color: #737373;
+	line-height: 1.875em;
+	cursor: pointer;
+}
+
+.login-bg .login-content input {
+	padding-left: 10%;
+	display: block;
+	width: 90%;
+	height: 2.875em;
+	border: 1px solid #e4e4e4;
+	border-radius: 5px;
+	color: #000000;
+	font-size: 0.875em;
+}
+
+.login-bg input[type="submit"] {
+	display: inline-block;
+	width: 100%;
+	height: 2.2em;
+	background-color: #0b3055;
+	font-size: 1.5em;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 1.5em;
+	cursor: pointer;
+	padding-left: 0;
+	margin-top: 20px;
+}

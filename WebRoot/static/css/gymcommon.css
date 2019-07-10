@@ -1,0 +1,231 @@
+@charset "utf-8";
+
+/*公共样式*/
+
+
+/*样式重置*/
+
+* {
+	box-sizing: border-box;
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+	color: #3399cc;
+	outline: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+input,
+button,
+select,
+textarea {
+	outline: none;
+}
+
+textarea {
+	resize: none;
+}
+
+input::-moz-placeholder {
+	color: #cfdae5;
+}
+
+input::-webkit-input-placeholder {
+	color: #cfdae5;
+}
+
+textarea::-moz-placeholder {
+	color: #cfdae5;
+}
+
+textarea::-webkit-placeholder {
+	color: #cfdae5;
+}
+
+::-ms-clear {
+	display: none;
+}
+
+::-ms-reveal {
+	display: none;
+}
+
+body {
+	font-family: Arial, 'Hiragino Sans GB', '微软雅黑', '黑体-简', Helvetica, sans-serif;
+	font-size: 12px;
+	overflow: hidden;
+	height: 100%;
+	color: #475059;
+	background: #fff;
+}
+
+input {
+	font-family: Arial, 'Hiragino Sans GB', '微软雅黑', '黑体-简', Helvetica, sans-serif;
+	font-size: 12px;
+	-webkit-transition: box-shadow .30s ease-in-out;
+	-moz-transition: box-shadow .30s ease-in-out;
+	-o-transition: box-shadow .30s ease-in-out;
+}
+
+input:text {
+	border: 1px solid #e6e6e6;
+	border-radius: 3px;
+}
+
+input:password {
+	border: 1px solid #e6e6e6;
+}
+
+button {
+	font-family: Arial, 'Hiragino Sans GB', 'Hiragino Sans GB', '微软雅黑', '黑体-简', Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+select {
+	font-family: Arial, 'Hiragino Sans GB', '微软雅黑', '黑体-简', Helvetica, sans-serif;
+	font-size: 12px;
+	border: 1px solid #e6e6e6;
+}
+
+textarea {
+	font-family: Arial, 'Hiragino Sans GB', '微软雅黑', '黑体-简', Helvetica, sans-serif;
+	border: 1px solid #e6e6e6;
+	border-radius: 3px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 44px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h2 {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 40px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h3 {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 22px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h4 {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 26px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h5 {
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 24px;
+}
+
+h6 {
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 18px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+img {
+	border: 0;
+	display: block;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+textarea {
+	font-size: 12px;
+	resize: none;
+}
+
+
+/** 消掉input框上的叉号 **/
+
+input::-webkit-search-cancel-button {
+	display: none;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+::-webkit-input-placeholder {
+	/* WebKit browsers */
+	color: #adbdcc;
+}
+
+:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #adbdcc;
+}
+
+::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #adbdcc;
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10+ */
+	color: #adbdcc;
+}
+
+/*表格*/
+
+thead,
+tfoot {
+	background-color: #0b2f53;
+	color: white;
+}
+
+.table>thead>tr>th {
+	text-align: center;
+	border: 0;
+}
+
+.table>tbody>tr>td {
+	text-align: center;
+}
+
+.table>tfoot>tr>th {
+	padding: 16px 0;
+	border: 0;
+}
+
+.table tbody tr:nth-of-type(odd) {
+	background-color: #ededee;
+}

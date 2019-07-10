@@ -1,0 +1,89 @@
+/*===========base-css=============*/
+@charset "utf-8";
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 12px "微软雅黑", "Arial Narrow", HELVETICA;
+	background: #fff;
+	-webkit-text-size-adjust: 100%
+}
+
+a {
+	color: #172c45;
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*a:hover {
+	color: #cd0200;
+	text-decoration: none
+}*/
+
+a.tdu {
+	text-decoration: underline;
+}
+
+a.tdn {
+	text-decoration: none;
+}
+
+::-webkit-input-placeholder {
+	color: #7c7c7c;
+}
+
+em {
+	font-style: normal
+}
+
+li {
+	list-style: none
+}
+
+img {
+	border: 0;
+	display: block;
+	vertical-align: middle
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.boder5 {
+	border-radius: 5px;
+}
+
+.border10 {
+	border-radius: 10px;
+}

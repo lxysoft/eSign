@@ -1,0 +1,127 @@
+
+/* 输入框上边距 */
+.marTop{
+	margin-top: 10px;
+}
+.marBot{
+	margin-bottom:10px; 
+}
+/* div内边距 */
+.xing{
+	padding-top: 8px;
+	margin-left: 0px;
+} 
+/* div内边距 */
+.marTop>div{
+	padding-top: 12px;
+} 
+/* 单选多选框与文字对齐 */
+input[type="radio"]{
+	vertical-align:middle;
+	margin-top:-2px; 
+	margin-bottom:1px;
+}
+input[type="checkbox"]{
+	vertical-align:middle;
+	margin-top:-2px; 
+	margin-bottom:1px;
+}
+/* 页头下划线*/
+.hrsoild{
+	width:92%;
+	clear:both;
+	border-bottom: 1px solid #ccc;
+	position: absolute;
+	top:58px;
+}
+/* 页头按钮距离修改 */
+.topRange{
+	padding-top: 20px;
+}
+/* 页头到本页标题 */
+.page-header{
+	margin-top: 6px;
+}
+/* 页头紧跟表格 */
+.page-header-botzero{
+	margin-top: 6px;
+	padding-bottom: 0px;
+}
+/* 该div下的table对齐 */
+.main-content-item{
+	clear:both;
+	margin-left: 0px;
+	margin-top:0px;
+	padding-top: 20px;
+}
+.main-content-footer{
+	margin-top: 0px;
+}
+select{
+	padding-bottom: 0px;
+	padding-left:0px; 
+	padding-right: 0px;
+	padding-top: 0px;
+}
+.left_align{
+	clear:both;
+	padding-left: 0;
+}
+/* 圆角输入框 */
+.round{
+	 background:
+#fff; border: 1px solid #ccc;
+    padding:
+5px;
+    border-radius:
+5px;
+    -webkit-border-radius:
+5px;
+    -moz-border-radius:
+5px;
+}
+/* 按钮选项间距 */
+.checkRadio{
+	margin-left: 15px;
+}
+
+
+
+/*查看用户*/
+
+.userView:nth-of-type(1) label {
+	height: 21px;
+}
+
+.userView:nth-of-type(2),
+.userView:nth-of-type(3) {
+	display: none;
+}
+
+.userView .btn-group .btn {
+	width: 88%;
+}
+
+.userView .btn-group .dropdown-toggle {
+	width: 12%;
+}
+
+.userView .btn-group .dropdown-menu {
+	width: -webkit-calc(100% - 30px);
+	width: -moz-calc(100% - 30px);
+	width: calc(100% - 30px);
+	left: 15px;
+}
+
+.userView .user-basic-msg li {
+	line-height: 30px;
+	font-size: 14px;
+}
+
+.padding5T{
+	padding-top: 5px;
+	
+}
+
+/*=================用户管理=================*/
+

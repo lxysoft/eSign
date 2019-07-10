@@ -1,0 +1,137 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.2.xsd 
+		http://www.springframework.org/schema/tx 
+		classpath:/org/springframework/transaction/config/spring-tx-3.2.xsd ">
+<bean class="com.testSign.esign.util.SystemInit"/>
+	<!-- 扫描controller注解,多个包中间使用半角逗号分隔 -->
+
+    <context:component-scan base-package="com.testSign"/>
+
+
+	<!-- validator="validator" 自动验证功能 暂不开启 -->
+	<mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+
+	<!-- 静态资源解析 包括 ：js、css、img、.. -->
+	<mvc:resources location="/static/" mapping="/static/**" />
+	<!-- springmvc 验证 -->
+	<!-- <mvc:annotation-driven conversion-service="conversionService" validator="validator"></mvc:annotation-driven> -->
+
+	<!-- 视图解析器 解析jsp解析，默认使用jstl标签，classpath下的得有jstl的包 -->
+	<!-- 配置渲染器 -->
+	<!--<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
+	<!--<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/> -->
+	<!--<property name="prefix" value="/WEB-INF/view/"/> -->
+	<!--<property name="suffix" value=".jsp"/> -->
+	<!--</bean> -->
+
+	<bean id="templateResolver"
+		class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".html" />
+		<property name="templateMode" value="HTML5" />
+		<property name="characterEncoding" value="UTF-8" />
+		<property name="cacheable" value="false" />
+	</bean>
+
+	<bean id="templateEngine" class="org.thymeleaf.spring3.SpringTemplateEngine">
+		<property name="templateResolver" ref="templateResolver" />
+	</bean>
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="contentNegotiationManager" ref="cnManager" />
+
+		<property name="viewResolvers">
+			<list>
+
+				<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+					<property name="order" value="1" />
+				</bean>
+
+				<bean class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
+					<property name="templateEngine" ref="templateEngine" />
+					<property name="characterEncoding" value="UTF-8" />
+					<property name="viewNames" value="thymeleaf/*" />
+					<property name="order" value="2" />
+					<!-- We need to set exclusions because Content Negotiation tries to 
+						resolve from -->
+					<!-- Thymeleaf even if a specific view bean (of a different class) is 
+						already -->
+					<!-- found, which might cause exceptions (e.g. ThymeleafView does not 
+						have a -->
+					<!-- 'marshaller' property). -->
+					<property name="excludedViewNames" value="*.xml" />
+				</bean>
+
+				<!-- Default viewClass: JSTL view (JSP with html output) -->
+				<bean
+					class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+					<property name="viewClass"
+						value="org.springframework.web.servlet.view.JstlView" />
+					<property name="prefix" value="/WEB-INF/view/" />
+					<property name="suffix" value=".jsp" />
+					<property name="order" value="3" />
+					<property name="viewNames" value="*" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="cnManager"
+		class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+		<property name="favorPathExtension" value="true" />
+		<property name="ignoreAcceptHeader" value="true" />
+		<property name="defaultContentType" value="text/html" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="html" value="text/html" />
+				<entry key="xml" value="application/xml" />
+				<entry key="atom" value="application/atom+xml" />
+			</map>
+		</property>
+	</bean>
+
+
+	<!-- 自定义参数绑定 -->
+	<bean id="conversionService"
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<!-- 转换器 -->
+		<property name="converters">
+			<list>
+				<!-- 日期类型转换 -->
+				<!-- <bean class="cn.itcast.ssm.controller.converter.CustomDateConverter" 
+					/> -->
+			</list>
+		</property>
+	</bean>
+
+
+	<!-- 全局异常处理器 只要实现HandlerExceptionResolver接口就是全局异常处理器 -->
+	<!-- <bean class="cn.itcast.ssm.exception.CustomExceptionResolver"></bean> -->
+
+	<!-- 文件上传 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 设置上传文件的最大尺寸为50MB -->
+		<property name="maxUploadSize">
+			<value>52428800</value>
+		</property>
+		<property name="uploadTempDir" value="upload/tmp" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+	<!-- 处理器映射器 -->
+	<!-- 根据bean的name进行查找Handler 将action的url配置在bean的name中 -->
+	<!-- <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" 
+		/> -->
+	
+</beans>
+		
